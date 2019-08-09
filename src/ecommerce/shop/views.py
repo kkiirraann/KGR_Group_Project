@@ -17,12 +17,14 @@ def home(request):
     if request.method == 'POST':
       params ={
         'allProds':allProds,
-        'LogInText' : 'LogOut'
+        'LogInText' : 'LogOut',
+        'user':request.user.username
       }
     else:
       params ={
         'allProds':allProds,
-        'LogInText' : 'LogIn'
+        'LogInText' : 'LogIn',
+        'user':'anonymous'
       }
     return render(request, 'shop/home.html', params)
 

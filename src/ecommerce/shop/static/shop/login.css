@@ -1,0 +1,51 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+#login-image{
+  width: 100%;
+}
+#login-image img{
+  width: 100%;
+  position: fixed;
+}
+/* css for bootstrap*/
+
+.loginbox{
+  background: url('../static/images/login/login-banner.jpg')no-repeat ;
+  width: 100%;
+  height: auto;
+  
+}
+.form-container{
+  padding: 40px 50px;
+  margin-top: 10vh;
+  -webkit-box-shadow: 1px 9px 24px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 9px 24px 3px rgba(0,0,0,0.75);
+box-shadow: 1px 9px 24px 3px rgba(0,0,0,0.75);
+}
+.heading{
+  color:#27838d;
+  text-align: center;
+  font-weight: bold;
+}
+#btns{
+  background:#328d97;
+}
+.link{
+  color: #27838d;
+}
+.link1{
+  font-weight: bold;
+  background-color: rgba(215, 224, 224, 0.75);
+  font-size: 18px;
+}
+.account-container{
+  margin-top: 15%;
+  width: 100%;
+  padding: 50px 60px;
+  -webkit-box-shadow: 1px 9px 24px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 9px 24px 3px rgba(0,0,0,0.75);
+box-shadow: 1px 9px 24px 3px rgba(0,0,0,0.75);
+}

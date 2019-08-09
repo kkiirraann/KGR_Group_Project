@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>KGR:Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'shop/login.css' %}">
+</head>
+<body>
+<div id="login-image">
+  <img src="{% static 'shop/images/login-banner.jpg' %}">
+</div>
+    <div class="container-fluid loginbox">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+<!--form-->
+    <form action = "{% url 'login' %}" method="POST" class="form-container">
+      {% csrf_token %}
+        <div class="form-group">
+          <h2 class="heading">Login Here</h2>
+          {% if message %}
+            <div class="alert alert-error">  
+              <small>{{ message }}</small>
+            </div>
+          {% endif %}
+          <!-- {% if email %}
+            {% if message%}
+              <div class="alert alert-error">  
+                {{ message }}
+              </div>
+            {% else %}
+              <div class="alert alert-error">
+                Account for {{ email }} is successfully registered
+              </div>
+            {% endif %}
+              <a>Account for {{ email }} is successfully registered</a> -->
+          <!-- {% endif %} -->
+          <label for="exampleInputEmail">Email</label>
+          <input type="text" name="email" class="form-control" id="exampleInputEmail" value="{{ email }}" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox"
+          name="checkbox" 
+          class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+        </div>
+        <button id="btns" type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
+        <a class="link" href="#">Lost your password?</a>
+       <br>
+    <a class ="link" href="{% url 'register' %}">Don't have an account?</a><br>
+    <a class="link"href="{% url 'shop-home' %}">Guest login</a>
+      </form>
+    </div>
+      <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    </div>
+  </div>
+
+  
+
+      
+<!-- </div> -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+</body>
+</html>

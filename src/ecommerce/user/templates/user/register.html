@@ -1,0 +1,59 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+{% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+{% endif %} 
+<!--form-->
+    <form action = "{% url 'register' %}" method="POST" class="form-container">
+        {% csrf_token %}
+        <div class="form-group">
+          <h2 class="heading">Register Here</h2>
+          <label for="exampleInputName">Name</label>
+          <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail">Email</label>
+          <input type="text" name="email" class="form-control" id="exampleInputEmail"  placeholder="Enter Email">
+          <div class="alert alert-error">
+              {{ A_message }}
+            </div>
+        </div>
+        <!-- <div class="form-group">
+          <label for="exampleInputPhone">Phone Number</label>
+          <input type="text" name="phone_number" class="form-control" id="exampleInputPhone" placeholder="Enter Phone Number">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputAddress">Address</label>
+          <input type="text" name="address" class="form-control" id="exampleInputAddress" placeholder="Enter Address">
+        </div> -->
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputConfirm"> Confirm Password</label>
+          <input type="password" name="confirm" class="form-control" id="exampleInputConfirm" placeholder="Confirm Password">
+          <div class="alert alert-error">
+              {{ P_message }}
+            </div>
+        </div>
+        
+        <button id="btns" type="submit" name="submit" class="btn btn-primary btn-block">Register</button>
+       <br>
+    <a class ="link1" href="/"> Already have an account? Click Here  </a>
+      </form>
+    </div>
+      <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    </div>
+  </div>
+
+
+
+
+
+{% endblock content%}

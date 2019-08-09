@@ -1,0 +1,35 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id = "wrapper">
+    <!--main-->
+    <div class="clearfix"></div>
+    <div class="container">
+        <div class="row mt-4">
+          <div class="col-md-5">
+            <img src="/media/{{product.image}}" width="300px" height="385px">
+          </div>
+          <div class="col-md-7">
+         
+            <h2>{{product.product_name}}</h2>
+            <h5>Author : {{product.author}}</h5>
+            <p>Product id : {{product.id}}</p>
+            <h4 class="price">Rs {{product.price}}</h4>
+            <p><b>Availability:</b>In Stock</p>
+            <label>Quantity:</label>
+            <input type="text" value="1">
+            <button type="button" class="btn btn-success cart">Add to Cart</button><br>
+            <p class="description"><b>Description:</b>
+            {{product.description}}</p>
+              
+          </div>
+        </div>
+      </div>
+    
+     </div> <!--close wrapper div-->
+
+
+
+
+{% endblock content %}

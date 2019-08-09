@@ -1,0 +1,45 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+<div class="container">
+
+<form class="account-container" method="POST" action ="/contact/">
+  {% csrf_token %}
+  <div class="form-group">
+    <h2 class="heading">Contact Us</h2>
+  </div>
+ 
+<!--Full Name-->
+<div class="form-group">
+  <label for="name" class="col-form-label">Name:</label>
+  <input type="text" class="form-control" id="recipient-name" name="name" placeholder="Full Name">
+</div>
+<!--email-->
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email address" aria-describedby="emailHelp">
+  </div>
+ <!--phone number-->     
+<div class="form-group">
+  <label for="phone">Phone</label>
+  <input type="number" class="form-control" id="exampleInputNumber" name="phone" placeholder="Mobile Number"> 
+</div>
+<!--message area-->
+<div class="form-group">
+  <label for="message" class="col-form-label">Message:</label>
+  <textarea class="form-control" id="message-text" name="message" placeholder="Message"></textarea>
+</div>
+<!--buttons-->
+<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="myFunction()" >Send message</button>
+</form> 
+
+<script>
+function myFunction() {
+  alert("Thank You for your message.We will get back within 7-10 working days.");
+}
+</script>
+</div>
+
+
+
+{% endblock content%}
